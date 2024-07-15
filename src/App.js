@@ -7,8 +7,7 @@ function App() {
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae,
         sit quasi delectus asperiores aliquam quo quis amet unde, voluptatem
-        itaque saepe veniam, earum labore suscipit beatae sapiente dicta debitis
-        cumque!
+        itaque saepe veniam, earum labore suscipit beatae sapiente cumque!
       </p>
     </div>
   );
