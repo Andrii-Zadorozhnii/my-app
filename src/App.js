@@ -1,28 +1,43 @@
-import "./styles/App.css";
+import React, { useState } from "react";
+import mammoth from "mammoth";
 
 function App() {
+  const [content, setContent] = useState("");
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = (event) => {
+      mammoth
+        .convertToHtml({ arrayBuffer: event.target.result })
+        .then((result) => setContent(result.value))
+        .catch((err) => console.error(err));
+    };
+
+    reader.readAsArrayBuffer(file);
+  };
+
+  const handleIconClick = () => {
+    document.getElementById("fileInput").click();
+  };
+
   return (
-    <div className="App">
-      <h1>How are you</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus et
-        vitae nemo ut ipsam quidem. Non voluptatum maiores amet facere minus
-        earum deleniti, hic veritatis soluta. Consectetur, nulla tempore?
-        Perferendis. Repudiandae provident odit iure at. Perspiciatis minus,
-        consequuntur dignissimos atque mollitia quisquam illum tempora sint ex
-        possimus laboriosam provident, sapiente deserunt, saepe veniam! Eius
-        saepe vel dicta commodi voluptatibus natus? Quibusdam praesentium
-        fugiat, nam perspiciatis hic officia quos tempore voluptatum excepturi,
-        expedita maiores, provident perferendis nobis molestiae qui dolore!
-        Nobis magni modi quae cumque, blanditiis odio dolores sequi aliquid cum.
-        Sunt alias error vero vel molestias iusto nostrum rerum sed ad dolores
-        reiciendis inventore voluptatibus quos, corrupti dolore aliquid incidunt
-        saepe repellat autem ut. Incidunt quisquam minus architecto unde
-        aspernatur. Ad voluptates officiis recusandae dolores tenetur, eius quis
-        dolorem quidem cumque itaque sapiente, sint quae. Ut doloremque qui quis
-        assumenda voluptatum vel sit, sed aliquam, totam, repellendus deleniti
-        laudantium aliquid.
-      </p>
+    <div>
+      <div
+        className="icon"
+        onClick={handleIconClick}
+        style={{ cursor: "pointer", fontSize: "24px" }}
+      >
+        📄 Загрузить файл
+      </div>
+      <input
+        type="file"
+        id="fileInput"
+        style={{ display: "none" }}
+        onChange={handleFileChange}
+      />
+      <div dangerouslySetInnerHTML={{ __html: content }} />
     </div>
   );
 }
