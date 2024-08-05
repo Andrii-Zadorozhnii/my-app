@@ -1,10 +1,27 @@
-import "./styles/App.css";
+import "./styles/Header-style.css";
 
 function Header() {
   return (
-    <div className="header">
-      <h1> How are you </h1>{" "}
-    </div>
+    <header>
+      <h1>My Website</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Services</a>
+          </li>
+          <li>
+            <a href="#">Contacts</a>
+          </li>
+        </ul>
+      </nav>
+      <hr />
+    </header>
   );
 }
 
