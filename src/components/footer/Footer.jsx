@@ -1,10 +1,10 @@
-import "./styles/App.css";
+import "./styles/Footer_Styles.css";
 
 function Footer() {
   return (
-    <div className="Footer">
-      <h1>How are you</h1>
-    </div>
+    <footer>
+      <p>&copy;{new Date().getFullYear()} Your website name</p>
+    </footer>
   );
 }
 
