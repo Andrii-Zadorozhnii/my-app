@@ -1,0 +1,8 @@
+.avatar {
+    max-width: 10rem;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: rgb(162, 255, 243);
+    border: 3px solid rgb(151, 148, 148);
+    border-inline-width: 3px;
+}

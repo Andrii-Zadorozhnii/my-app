@@ -1,13 +1,12 @@
-import Food from "./components/food/Food.jsx";
-import Footer from "./components/footer/Footer.jsx";
-import Header from "./components/header/Header.jsx";
+import AboutPage from "./Components/AboutPage.jsx";
+import MyButton from "./Components/Button.jsx";
 
 function App() {
   return (
     <>
-      <Header />
-      <Food />
-      <Footer />
+      <AboutPage />
+      <h1>Welcome to my app!</h1>
+      <MyButton />
     </>
   );
 }
